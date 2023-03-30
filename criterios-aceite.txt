@@ -1,0 +1,40 @@
+[Challenge | Rethink] - Weather ☁ ☁
+
+Faça uma aplicação simples de previsão do tempo utilizando a api Openweathermap. (https://openweathermap.org/api)
+
+
+Critérios de aceite:
+
+1. A aplicação deve ser construída com React Native CLI e TypeScript; OK
+
+2. A aplicação deve conter pelo menos uma tela que exiba a previsão do tempo para um local específico;
+
+3. A aplicação deve conter pelo menos uma tela que liste as previsões do tempo recentes;
+
+4. A aplicação deve conter pelo menos uma tela que liste os dados dos locais salvos;
+
+5. A aplicação deve permitir que o usuário salve os locais de previsão do tempo favoritos;
+
+6. A aplicação deve conter ao menos 3 testes unitários e 1 teste de integração usando Jest e Testing-Library/React-Native;
+
+7. A aplicação deve conter pelo menos uma camada de armazenamento com Redux;
+
+8. A aplicação deve fazer as requisições HTTP com Axios; OK
+
+9. Não avaliaremos a qualidade visual da UI, queremos ver funcionalidades dentro desses critérios. Mas ao escolher uma estratégia de estilização, use Stylesheet. Não use biblioteca de componentes e nem styled components.
+
+10. O projeto deve conter um README.md descrevendo a execução do projeto.
+
+11.  Disponibilizar em algum repositório para nossa avaliação.
+
+BDD:
+
+Dado que o usuário acesse a aplicação
+
+Quando o usuário procurar por uma previsão do tempo para uma localidade específica
+
+Então a aplicação deve exibir os dados da previsão para a localidade especificada
+
+E quando o usuário salvar um local
+
+Então a aplicação deve exibir os dados do local salvo na tela de dados dos locais salvos

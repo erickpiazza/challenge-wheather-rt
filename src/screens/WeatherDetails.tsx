@@ -1,14 +1,20 @@
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useCallback, useEffect, useState} from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
+import {RootStackParamList} from '../navigation/Routes';
 import getWeather from '../services/getWeather';
-import {ICoord, IWeather} from '../shared/interfaces';
+import {IWeather} from '../shared';
 
-interface IWeatherDetailsProps {
-  coord: ICoord;
-}
+type WeatherDetailsProps = NativeStackScreenProps<
+  RootStackParamList,
+  'WeatherDetails'
+>;
 
-const WeatherDetails = ({coord}: IWeatherDetailsProps) => {
+const WeatherDetails = ({navigation, route}: WeatherDetailsProps) => {
   const [weatherDetails, setWeatherDetails] = useState<IWeather>();
+  const coord = route.params.coord;
+  console.log('navigation', navigation);
+  console.log('route', route);
 
   const searchWeatherDetails = useCallback(async () => {
     const responseWeather = await getWeather({coord: coord});

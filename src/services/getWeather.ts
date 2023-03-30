@@ -1,11 +1,10 @@
 import {AxiosResponse} from 'axios';
 import api from '../api/axios';
-import {ICoord, IWeather} from '../shared/interfaces';
+import {appid, ICoord, IWeather} from '../shared';
 
 interface IPayload {
   coord: ICoord;
 }
-const appid = 'f6a5ec855dd41922293af61f6ba32181';
 
 interface IOutputWeather extends IWeather {}
 
@@ -14,7 +13,7 @@ export default async function getWeather({
 }: IPayload): Promise<IOutputWeather | undefined> {
   return await api
     .get(
-      `weather?lat=${coord.lat}&lon=${coord.lon}&units=metric&lang=pt_br&appid=${appid}`,
+      `data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&units=metric&lang=pt_br&appid=${appid}`,
     )
     .then((response: AxiosResponse<IOutputWeather>) => {
       console.log('response', response);
