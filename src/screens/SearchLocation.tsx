@@ -4,9 +4,7 @@ import {FlatList, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {RootStackParamList} from '../navigation/Routes';
 import getLocation from '../services/getLocation';
 import {ILocation} from '../shared';
-import {saved} from '../store/slice/storeWeatherReducer';
-import {useAppDispatch} from '../utils/hooks/useAppDispatch';
-import {useAppSelector} from '../utils/hooks/useAppSelector';
+
 import useDebounce from '../utils/hooks/useDebounce';
 
 type SearchLocationProps = NativeStackScreenProps<
@@ -17,26 +15,21 @@ type SearchLocationProps = NativeStackScreenProps<
 export function SearchLocation({navigation}: SearchLocationProps) {
   const [locationText, onChangeLocation] = useState('');
   const [locations, setLocations] = useState<ILocation[]>([]);
-  const count = useAppSelector(state => state.storeWeather.value);
-  const dispatch = useAppDispatch();
   const debouncedValue = useDebounce<string>(locationText);
-
-  console.log('count', count);
 
   const searchLocation = useCallback(async (location: string) => {
     const responseLocations = await getLocation({city: location});
     setLocations(responseLocations);
-    console.log('responseLocation', responseLocations);
   }, []);
 
   useEffect(() => {
-    console.log('efect debouncedValue', debouncedValue);
     searchLocation(debouncedValue);
   }, [debouncedValue, searchLocation]);
 
   function handlerClickLocation(locationSelected: ILocation) {
-    dispatch(saved());
-    console.log('clicl', locationSelected);
+    navigation.navigate('WeatherDetails', {
+      coord: {lat: locationSelected.lat, lon: locationSelected.lon},
+    });
   }
 
   return (
@@ -45,6 +38,7 @@ export function SearchLocation({navigation}: SearchLocationProps) {
         style={{paddingHorizontal: 16}}
         ListHeaderComponent={
           <TextInput
+            autoCorrect={false}
             value={locationText}
             onChangeText={onChangeLocation}
             style={{

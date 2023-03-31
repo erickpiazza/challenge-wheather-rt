@@ -16,7 +16,6 @@ export default async function getWeather({
       `data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&units=metric&lang=pt_br&appid=${appid}`,
     )
     .then((response: AxiosResponse<IOutputWeather>) => {
-      console.log('response', response);
       return response.data;
     })
     .catch(err => {

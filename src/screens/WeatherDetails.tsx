@@ -17,7 +17,6 @@ function WeatherDetails({route, navigation}: WeatherDetailsProps) {
   const searchWeatherDetails = useCallback(async () => {
     const responseWeather = await getWeather({coord: coord});
     setWeatherDetails(responseWeather);
-    console.log('responseWeather', responseWeather);
   }, [coord]);
 
   useEffect(() => {
