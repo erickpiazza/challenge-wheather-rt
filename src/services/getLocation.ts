@@ -12,7 +12,7 @@ export default async function getLocation({
   city,
 }: IPayload): Promise<IOutputLocation> {
   return await api
-    .get(`geo/1.0/direct?q=${city}&limit=5&appid=${appid}`)
+    .get(`geo/1.0/direct?q=${city}&limit=2&appid=${appid}`)
     .then((response: AxiosResponse<IOutputLocation>) => {
       return response.data;
     })

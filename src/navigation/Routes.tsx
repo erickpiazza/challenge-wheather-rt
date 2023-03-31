@@ -1,25 +1,31 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import WeatherDetails from '../screens/WeatherDetails';
+import WeatherDetails from '../screens/WeatherDetailsScreen';
 import {ICoord} from '../shared';
-import {SearchLocation} from '../screens/SearchLocation';
+import {SearchLocation} from '../screens/SearchLocationScreen';
+import FavoriteLocationsScreen from '../screens/FavoriteLocationsScreen';
 
 export type RootStackParamList = {
-  WeatherDetails: {coord: ICoord};
-  SearchLocation: undefined;
+  WeatherDetailsScreen: {coord: ICoord};
+  SearchLocationScreen: undefined;
+  FavoriteLocationsScreen: undefined;
 };
 
 const {Navigator, Screen} = createNativeStackNavigator<RootStackParamList>();
 
 export function Routes() {
   return (
-    <Navigator initialRouteName="WeatherDetails">
+    <Navigator initialRouteName="WeatherDetailsScreen">
       <Screen
-        name="WeatherDetails"
+        name="WeatherDetailsScreen"
         component={WeatherDetails}
         initialParams={{coord: {lat: -22.9056, lon: -47.0608}}}
       />
-      <Screen name="SearchLocation" component={SearchLocation} />
+      <Screen name="SearchLocationScreen" component={SearchLocation} />
+      <Screen
+        name="FavoriteLocationsScreen"
+        component={FavoriteLocationsScreen}
+      />
     </Navigator>
   );
 }

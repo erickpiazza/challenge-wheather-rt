@@ -9,5 +9,6 @@ interface IWeatherMain {
 
 export interface IWeather {
   name: string;
+  id: number;
   main: IWeatherMain;
 }
