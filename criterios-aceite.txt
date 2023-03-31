@@ -9,23 +9,24 @@ Critérios de aceite:
 
 2. A aplicação deve conter pelo menos uma tela que exiba a previsão do tempo para um local específico;OK
 
-3. A aplicação deve conter pelo menos uma tela que liste as previsões do tempo recentes; 
+3. A aplicação deve conter pelo menos uma tela que liste as previsões do tempo recentes; OK
 
 4. A aplicação deve conter pelo menos uma tela que liste os dados dos locais salvos; OK
 
 5. A aplicação deve permitir que o usuário salve os locais de previsão do tempo favoritos; OK
 
-6. A aplicação deve conter ao menos 3 testes unitários e 1 teste de integração usando Jest e Testing-Library/React-Native;
+6. A aplicação deve conter ao menos 3 testes unitários e 1 teste de integração usando Jest e Testing-Library/React-Native; -- Pendente 
 
 7. A aplicação deve conter pelo menos uma camada de armazenamento com Redux; OK
 
 8. A aplicação deve fazer as requisições HTTP com Axios; OK
 
 9. Não avaliaremos a qualidade visual da UI, queremos ver funcionalidades dentro desses critérios. Mas ao escolher uma estratégia de estilização, use Stylesheet. Não use biblioteca de componentes e nem styled components.
+ (obs: ainda falta estilizar o projeto)
 
-10. O projeto deve conter um README.md descrevendo a execução do projeto.
+10. O projeto deve conter um README.md descrevendo a execução do projeto. - ok - (colocar um git do projeto)
 
-11.  Disponibilizar em algum repositório para nossa avaliação.
+11.  Disponibilizar em algum repositório para nossa avaliação. OK
 
 BDD:
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import WeatherDetailsScreen from '../screens/WeatherDetailsScreen/WeatherDetailsScreen';
+import WeatherDetailsScreen from '../screens/WeatherDetailsScreen';
 import SearchLocationScreen from '../screens/SearchLocationScreen';
 import FavoriteLocationsScreen from '../screens/FavoriteLocationsScreen';
 

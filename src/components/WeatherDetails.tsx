@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import {IWeather} from '../shared';
 
 interface IWeatherDetailsProps {
@@ -8,13 +8,34 @@ interface IWeatherDetailsProps {
 
 export function WeatherDetails({weather}: IWeatherDetailsProps) {
   return (
-    <SafeAreaView>
-      <View style={{alignItems: 'center'}}>
+    <View style={styles.container}>
+      <View style={styles.boxTitle}>
         <Text>{weather?.name}</Text>
         <Text>
           {weather?.main?.temp ? `${Math.round(weather?.main?.temp)}°` : '--'}
         </Text>
       </View>
-    </SafeAreaView>
+
+      <View />
+
+      <View style={styles.boxMaxAndMin}>
+        <Text>
+          {weather?.main?.temp
+            ? `Max.${Math.round(weather?.main?.temp_max)}°`
+            : '--'}
+        </Text>
+        <Text>
+          {weather?.main?.temp
+            ? `Min.${Math.round(weather?.main?.temp_min)}°`
+            : '--'}
+        </Text>
+      </View>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {padding: 8},
+  boxTitle: {alignItems: 'center'},
+  boxMaxAndMin: {flexDirection: 'row', justifyContent: 'space-around'},
+});
