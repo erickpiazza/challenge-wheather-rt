@@ -7,17 +7,17 @@ Critérios de aceite:
 
 1. A aplicação deve ser construída com React Native CLI e TypeScript; OK
 
-2. A aplicação deve conter pelo menos uma tela que exiba a previsão do tempo para um local específico;
+2. A aplicação deve conter pelo menos uma tela que exiba a previsão do tempo para um local específico;OK
 
-3. A aplicação deve conter pelo menos uma tela que liste as previsões do tempo recentes;
+3. A aplicação deve conter pelo menos uma tela que liste as previsões do tempo recentes; 
 
-4. A aplicação deve conter pelo menos uma tela que liste os dados dos locais salvos;
+4. A aplicação deve conter pelo menos uma tela que liste os dados dos locais salvos; OK
 
-5. A aplicação deve permitir que o usuário salve os locais de previsão do tempo favoritos;
+5. A aplicação deve permitir que o usuário salve os locais de previsão do tempo favoritos; OK
 
 6. A aplicação deve conter ao menos 3 testes unitários e 1 teste de integração usando Jest e Testing-Library/React-Native;
 
-7. A aplicação deve conter pelo menos uma camada de armazenamento com Redux;
+7. A aplicação deve conter pelo menos uma camada de armazenamento com Redux; OK
 
 8. A aplicação deve fazer as requisições HTTP com Axios; OK
 
