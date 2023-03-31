@@ -14,7 +14,6 @@ export const storeWeatherSlice = createSlice({
   initialState,
   reducers: {
     savedWeather(state, action: PayloadAction<IWeatherLocation>) {
-      console.log('action', action);
       const weatherToSave = action.payload;
       const isWeatherInArray = state.weathers.find(
         weather => weather.id === weatherToSave.id,
@@ -22,7 +21,6 @@ export const storeWeatherSlice = createSlice({
       if (isWeatherInArray) {
         return;
       } else {
-        console.log('state', state.weathers);
         state.weathers.push(action.payload);
       }
     },

@@ -1,9 +1,11 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import WeatherDetails from '../screens/WeatherDetailsScreen';
-import {ICoord} from '../shared';
-import {SearchLocation} from '../screens/SearchLocationScreen';
+
+import WeatherDetailsScreen from '../screens/WeatherDetailsScreen/WeatherDetailsScreen';
+import SearchLocationScreen from '../screens/SearchLocationScreen';
 import FavoriteLocationsScreen from '../screens/FavoriteLocationsScreen';
+
+import {ICoord} from '../shared';
 
 export type RootStackParamList = {
   WeatherDetailsScreen: {coord: ICoord};
@@ -18,10 +20,10 @@ export function Routes() {
     <Navigator initialRouteName="WeatherDetailsScreen">
       <Screen
         name="WeatherDetailsScreen"
-        component={WeatherDetails}
+        component={WeatherDetailsScreen}
         initialParams={{coord: {lat: -22.9056, lon: -47.0608}}}
       />
-      <Screen name="SearchLocationScreen" component={SearchLocation} />
+      <Screen name="SearchLocationScreen" component={SearchLocationScreen} />
       <Screen
         name="FavoriteLocationsScreen"
         component={FavoriteLocationsScreen}

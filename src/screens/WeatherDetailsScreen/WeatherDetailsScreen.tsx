@@ -1,20 +1,25 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {Button} from 'react-native';
-import {WeatherDetails} from '../components/WeatherDetails';
-import {RootStackParamList} from '../navigation/Routes';
+import {WeatherDetails} from '../../components/WeatherDetails';
+import {RootStackParamList} from '../../navigation/Routes';
+import {useWeatherDetails} from '../../utils/hooks/useWeatherDetails';
 
 type WeatherDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'WeatherDetailsScreen'
 >;
 
-function WeatherDetailsScreen({route, navigation}: WeatherDetailsScreenProps) {
+export default function WeatherDetailsScreen({
+  route,
+  navigation,
+}: WeatherDetailsScreenProps) {
   const coord = route.params.coord;
+  const {weatherDetails} = useWeatherDetails(coord);
 
   return (
     <>
-      <WeatherDetails coord={coord} />
+      <WeatherDetails weather={weatherDetails} />
       <Button
         onPress={() => navigation.navigate('SearchLocationScreen')}
         title="Buscar localizaçao"
@@ -26,5 +31,3 @@ function WeatherDetailsScreen({route, navigation}: WeatherDetailsScreenProps) {
     </>
   );
 }
-
-export default WeatherDetailsScreen;
