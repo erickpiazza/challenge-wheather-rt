@@ -1,11 +1,12 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useCallback, useEffect, useState} from 'react';
 import {FlatList, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
 import {RootStackParamList} from '../navigation/Routes';
 import getLocation from '../services/getLocation';
 import {ILocation} from '../shared';
 import {saved} from '../store/slice/storeWeatherReducer';
+import {useAppDispatch} from '../utils/hooks/useAppDispatch';
+import {useAppSelector} from '../utils/hooks/useAppSelector';
 import useDebounce from '../utils/hooks/useDebounce';
 
 type SearchLocationProps = NativeStackScreenProps<
@@ -16,8 +17,8 @@ type SearchLocationProps = NativeStackScreenProps<
 export function SearchLocation({navigation}: SearchLocationProps) {
   const [locationText, onChangeLocation] = useState('');
   const [locations, setLocations] = useState<ILocation[]>([]);
-  const count = useSelector(state => state.storeWeather.value);
-  const dispatch = useDispatch();
+  const count = useAppSelector(state => state.storeWeather.value);
+  const dispatch = useAppDispatch();
   const debouncedValue = useDebounce<string>(locationText);
 
   console.log('count', count);
