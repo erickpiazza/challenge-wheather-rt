@@ -47,11 +47,13 @@ export default function ModalWeather({
         <View style={styles.modalView}>
           <View style={styles.boxActions}>
             <TouchableOpacity onPress={onClose}>
-              <Text>Cancelar</Text>
+              <Text>Fechar</Text>
             </TouchableOpacity>
             {canSaveThisWeather && (
               <TouchableOpacity
-                onPress={() => dispatch(savedWeather(weatherDetails))}>
+                onPress={() =>
+                  weatherDetails && dispatch(savedWeather(weatherDetails))
+                }>
                 <Text>Favoritar</Text>
               </TouchableOpacity>
             )}

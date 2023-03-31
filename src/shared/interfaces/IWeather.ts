@@ -1,3 +1,5 @@
+import {ICoord} from './ICoord';
+
 interface IWeatherMain {
   feels_like: number;
   humidity: number;
@@ -11,4 +13,5 @@ export interface IWeather {
   name: string;
   id: number;
   main: IWeatherMain;
+  coord: ICoord;
 }

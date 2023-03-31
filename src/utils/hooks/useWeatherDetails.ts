@@ -10,6 +10,7 @@ export const useWeatherDetails = (coord?: ICoord) => {
       return;
     }
     const responseWeather = await getWeather({coord: coord});
+
     setWeatherDetails(responseWeather);
   }, [coord]);
 

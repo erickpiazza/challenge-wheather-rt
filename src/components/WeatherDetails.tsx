@@ -12,7 +12,7 @@ export function WeatherDetails({weather}: IWeatherDetailsProps) {
       <View style={{alignItems: 'center'}}>
         <Text>{weather?.name}</Text>
         <Text>
-          {weather?.main?.temp ? Math.round(weather?.main?.temp) : '--'}
+          {weather?.main?.temp ? `${Math.round(weather?.main?.temp)}°` : '--'}
         </Text>
       </View>
     </SafeAreaView>

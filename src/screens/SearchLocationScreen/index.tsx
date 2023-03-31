@@ -22,7 +22,6 @@ export default function SearchLocationScreen() {
 
   const searchLocation = useCallback(async (location: string) => {
     const responseLocations = await getLocation({city: location});
-    console.log('outro log', responseLocations);
     setLocations(responseLocations);
   }, []);
 

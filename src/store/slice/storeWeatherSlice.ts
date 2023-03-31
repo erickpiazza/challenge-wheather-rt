@@ -1,10 +1,8 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {ILocation, IWeather} from '../../shared';
-
-interface IWeatherLocation extends IWeather, ILocation {}
+import {IWeather} from '../../shared';
 
 interface IStoreWeatherSlice {
-  weathers: IWeatherLocation[];
+  weathers: IWeather[];
 }
 
 const initialState: IStoreWeatherSlice = {weathers: []};
@@ -13,7 +11,7 @@ export const storeWeatherSlice = createSlice({
   name: 'storeWeather',
   initialState,
   reducers: {
-    savedWeather(state, action: PayloadAction<IWeatherLocation>) {
+    savedWeather(state, action: PayloadAction<IWeather>) {
       const weatherToSave = action.payload;
       const isWeatherInArray = state.weathers.find(
         weather => weather.id === weatherToSave.id,
